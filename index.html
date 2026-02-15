@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PMR WIRA SMKN 1 KEPANJEN - PDD</title>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --maroon: #801b1b;
+            --dark: #1a1a1a;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            color: var(--dark);
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 40px;
+            background-color: var(--maroon);
+        }
+
+        .logo-container img {
+            height: 150px;
+            width: auto;
+            filter: drop-shadow(0px 4px 4px rgba(0,0,0,0.2));
+        }
+
+        .hero-section {
+            background-color: var(--maroon);
+            color: var(--white);
+            text-align: center;
+            padding: 20px 20px 60px 20px;
+            text-transform: uppercase;
+        }
+
+        .hero-section h1 {
+            font-family: 'League Spartan', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            line-height: 1.1;
+            margin: 10px 0;
+        }
+
+        .info-box {
+            display: inline-block;
+            border: 2px solid var(--white);
+            padding: 8px 30px;
+            margin-top: 15px;
+        }
+
+        .info-box span {
+            font-weight: 700;
+            letter-spacing: 3px;
+            font-size: 1.4rem;
+        }
+
+        /* SECTION FOTO FULL TEAM (SEDERET) */
+        .full-team-section {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Langsung 3 kolom sederet */
+            gap: 15px;
+        }
+
+        .full-team-section img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .section-title {
+            text-align: center;
+            color: var(--maroon);
+            font-weight: 700;
+            margin-top: 50px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* GRID ANGGOTA (2 - 4 - 4) */
+        .gallery-container {
+            max-width: 1200px; /* Diperlebar agar muat 4 foto */
+            margin: 20px auto 80px;
+            padding: 0 20px;
+        }
+
+        .grid-pdd {
+            display: grid;
+            /* Default untuk HP: 1 kolom */
+            grid-template-columns: 1fr; 
+            gap: 25px;
+        }
+
+        /* Pengaturan Desktop (Layar Lebar) */
+        @media (min-width: 1000px) {
+            .grid-pdd {
+                grid-template-columns: repeat(4, 1fr); /* Grid dasar 4 kolom */
+            }
+
+            /* 2 Foto Pertama (Koordinator) ambil posisi tengah/spesifik */
+            .member-card:nth-child(1), 
+            .member-card:nth-child(2) {
+                grid-column: span 2; /* Membuat baris pertama isi 2 foto besar */
+                margin: 0 15%; /* Memberi jarak agar lebih ke tengah */
+            }
+            
+            /* Sisa anggota otomatis mengisi 4 kolom di bawahnya */
+            .member-card:nth-child(n+3) {
+                grid-column: span 1;
+                margin: 0;
+            }
+        }
+
+        .member-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .photo-wrapper {
+            width: 100%;
+            height: 350px;
+            background-color: #eee;
+        }
+
+        .photo-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .member-info {
+            padding: 15px;
+        }
+
+        .member-info h3 {
+            margin: 0;
+            color: var(--maroon);
+            font-size: 1.1rem;
+        }
+
+        .member-info p {
+            margin: 5px 0 0;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: #222;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="logo-container">
+        <img src="2.png">
+    </div>
+
+    <header class="hero-section">
+        <h1>PMR WIRA</h1>
+        <h1>SMKN 1 KEPANJEN</h1>
+        <div class="info-box">
+            <span>GEN 14 • SIE PDD</span>
+        </div>
+    </header>
+
+    <h2 class="section-title">Full Team</h2>
+    <div class="full-team-section">
+        <img src="WhatsApp Image 2026-02-14 at 22.23.20.jpeg" alt="Full Team 1">
+        <img src="WhatsApp Image 2026-02-14 at 22.23.21 (1).jpeg" alt="Full Team 2">
+        <img src="WhatsApp Image 2026-02-14 at 22.23.21.jpeg" alt="Full Team 3">
+    </div>
+
+    <h2 class="section-title">Struktur Anggota</h2>
+    <main class="gallery-container">
+        <div class="grid-pdd">
+            
+            <div class="member-card">
+                <div class="photo-wrapper"><img src="Maurine Putri W_X RPL 1.png"></div>
+                <div class="member-info"><h3>MAURINE PUTRI W.</h3><p>Koordinator PDD</p></div>
+            </div>
+
+            <div class="member-card">
+                <div class="photo-wrapper"><img src="Ghaisa Ramadanti TKJ 4.png"></div>
+                <div class="member-info"><h3>GHAISA RAMADANTI</h3><p>Wakil Koordinator PDD</p></div>
+            </div>
+
+            <div class="member-card">
+                <div class="photo-wrapper"><img src="Afillah Nurus Sifa_X RPL 1.png"></div>
+                <div class="member-info"><h3>AFILLAH NURUS S.</h3><p>Anggota PDD</p></div>
+            </div>
+
+            <div class="member-card">
+                <div class="photo-wrapper"><img src="Ana Vi'aduzzaqqia X RPL 1.png"></div>
+                <div class="member-info"><h3>ANA VI'ADUZZAQQIA</h3><p>Anggota PDD</p></div>
+            </div>
+
+            <div class="member-card">
+                <div class="photo-wrapper"><img src="Artalyta Devina Damayanti_ X TKJ 4.png"></div>
+                <div class="member-info"><h3>ARTALYTA DEVINA D.</h3><p>Anggota PDD</p></div>
+            </div>
+
+            <div class="member-card">
+                <div class="photo-wrapper"><img src="Fatiha Tsamrotul Kolbi_ X TEI 1.png"></div>
+                <div class="member-info"><h3>FATIHA TSAMROTUL K.</h3><p>Anggota PDD</p></div>
+            </div>
+
+            <div class="member-card">
+                <div class="photo-wrapper"><img src="Mila Afita Sari_X TKJ 1.png"></div>
+                <div class="member-info"><h3>MILA AFITA SARI</h3><p>Anggota PDD</p></div>
+            </div>
+
+            <div class="member-card">
+                <div class="photo-wrapper"><img src="Nada Salsabilla X TKJ 4.png"></div>
+                <div class="member-info"><h3>NADA SALSABILLA</h3><p>Anggota PDD</p></div>
+            </div>
+
+            <div class="member-card">
+                <div class="photo-wrapper"><img src="Nasyla Aulia Alifah_X TEI 1.png"></div>
+                <div class="member-info"><h3>NASYLA AULIA A.</h3><p>Anggota PDD</p></div>
+            </div>
+
+            <div class="member-card">
+                <div class="photo-wrapper"><img src="Niken Ayu Anjani_X TEI 1.png"></div>
+                <div class="member-info"><h3>NIKEN AYU A.</h3><p>Anggota PDD</p></div>
+            </div> 
+
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2025/2026 PMR WIRA SMKN 1 KEPANJEN - Gen 14
+    </footer>
+
+</body>
+</html>
