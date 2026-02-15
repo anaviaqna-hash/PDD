@@ -24,12 +24,12 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            padding-top: 40px;
+            padding-top: 30px;
             background-color: var(--maroon);
         }
 
         .logo-container img {
-            height: 120px;
+            height: 90px;
             width: auto;
             filter: drop-shadow(0px 4px 4px rgba(0,0,0,0.2));
         }
@@ -38,13 +38,13 @@
             background-color: var(--maroon);
             color: var(--white);
             text-align: center;
-            padding: 10px 20px 40px 20px;
+            padding: 10px 10px 30px 10px;
             text-transform: uppercase;
         }
 
         .hero-section h1 {
             font-family: 'League Spartan', sans-serif;
-            font-size: clamp(1.8rem, 5vw, 4.5rem);
+            font-size: clamp(1.4rem, 7vw, 4rem);
             line-height: 1.1;
             margin: 5px 0;
         }
@@ -52,70 +52,82 @@
         .info-box {
             display: inline-block;
             border: 2px solid var(--white);
-            padding: 5px 20px;
-            margin-top: 10px;
+            padding: 4px 12px;
+            margin-top: 8px;
         }
 
         .info-box span {
             font-weight: 700;
-            letter-spacing: 2px;
-            font-size: 1.1rem;
-        }
-
-        /* SECTION FOTO FULL TEAM (3 KOLOM) */
-        .full-team-section {
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 0 10px;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 8px;
-        }
-
-        .full-team-section img {
-            width: 100%;
-            height: 120px; /* Pendek di HP */
-            object-fit: cover;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            letter-spacing: 1px;
+            font-size: 0.8rem;
         }
 
         .section-title {
             text-align: center;
             color: var(--maroon);
             font-weight: 700;
-            margin-top: 30px;
+            margin-top: 25px;
             text-transform: uppercase;
+            font-size: 0.9rem;
             letter-spacing: 1px;
-            font-size: 1.2rem;
         }
 
-        /* GRID ANGGOTA (Kecil di HP - 2 Kolom) */
+        /* --- SECTION FULL TEAM --- */
+        .full-team-section {
+            max-width: 1200px;
+            margin: 15px auto;
+            padding: 0 10px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 5px;
+        }
+
+        .full-team-section img {
+            width: 100%;
+            height: 80px; 
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        /* --- GRID ANGGOTA (4 KOLOM DI HP) --- */
         .gallery-container {
             max-width: 1200px;
-            margin: 15px auto 60px;
-            padding: 0 10px;
+            margin: 10px auto 50px;
+            padding: 0 5px;
         }
 
         .grid-pdd {
             display: grid;
-            grid-template-columns: repeat(2, 1fr); /* 2 Kolom di HP */
-            gap: 12px;
+            grid-template-columns: repeat(4, 1fr); /* Tetap 4 kolom di HP */
+            gap: 6px;
         }
 
         .member-card {
             background: white;
-            border-radius: 8px;
+            border-radius: 4px;
             overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             text-align: center;
-            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Penempatan 2 Foto Koordinator (Masing-masing makan 2 kolom agar seimbang di atas) */
+        .member-card:nth-child(1),
+        .member-card:nth-child(2) {
+            grid-column: span 2;
         }
 
         .photo-wrapper {
             width: 100%;
-            height: 180px; /* Tinggi foto mungil di HP */
+            height: 120px; /* Tinggi foto di HP */
             background-color: #eee;
+        }
+
+        /* Khusus koordinator fotonya lebih tinggi sedikit di HP */
+        .member-card:nth-child(1) .photo-wrapper,
+        .member-card:nth-child(2) .photo-wrapper {
+            height: 150px;
         }
 
         .photo-wrapper img {
@@ -125,58 +137,54 @@
         }
 
         .member-info {
-            padding: 10px 5px;
+            padding: 5px 2px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .member-info h3 {
             margin: 0;
             color: var(--maroon);
-            font-size: 0.8rem; /* Teks kecil untuk HP */
+            font-size: 0.55rem; /* Font sangat kecil agar muat 4 kolom */
             text-transform: uppercase;
+            line-height: 1.2;
         }
 
         .member-info p {
-            margin: 3px 0 0;
-            font-size: 0.65rem;
+            margin: 2px 0 0;
+            font-size: 0.45rem;
             color: #666;
+            font-weight: 400;
         }
 
-        /* --- Tampilan Desktop (Layar Lebar) --- */
+        /* --- PENYESUAIAN LAYAR BESAR (DESKTOP) --- */
         @media (min-width: 768px) {
-            .logo-container img { height: 150px; }
-            .section-title { font-size: 1.8rem; margin-top: 50px; }
+            .logo-container img { height: 130px; }
+            .section-title { font-size: 1.5rem; }
+            .full-team-section img { height: 200px; gap: 15px; }
             
-            .full-team-section { gap: 15px; padding: 0 20px; }
-            .full-team-section img { height: 250px; }
-
-            .grid-pdd {
-                grid-template-columns: repeat(4, 1fr);
-                gap: 25px;
-            }
-
-            .photo-wrapper { height: 350px; }
-            .member-info h3 { font-size: 1.1rem; }
-            .member-info p { font-size: 0.85rem; }
-
-            /* Koordinator & Wakil (Baris 1) Jadi Lebih Besar di Desktop */
-            .member-card:nth-child(1), 
-            .member-card:nth-child(2) {
-                grid-column: span 2;
-                margin: 0 15%;
-            }
+            .grid-pdd { gap: 20px; padding: 0 20px; }
             
-            .member-card:nth-child(n+3) {
-                grid-column: span 1;
-                margin: 0;
+            .photo-wrapper { height: 300px; }
+            .member-card:nth-child(1) .photo-wrapper,
+            .member-card:nth-child(2) .photo-wrapper { height: 350px; }
+
+            .member-info h3 { font-size: 0.9rem; }
+            .member-info p { font-size: 0.75rem; }
+
+            .member-card:nth-child(1), .member-card:nth-child(2) {
+                margin: 0 10%;
             }
         }
 
         footer {
             text-align: center;
-            padding: 30px;
+            padding: 20px;
             background: #222;
             color: #fff;
-            font-size: 0.8rem;
+            font-size: 0.7rem;
         }
     </style>
 </head>
@@ -212,47 +220,47 @@
 
             <div class="member-card">
                 <div class="photo-wrapper"><img src="Ghaisa Ramadanti TKJ 4.png"></div>
-                <div class="member-info"><h3>GHAISA RAMADANTI</h3><p>Wakil Koordinator PDD</p></div>
+                <div class="member-info"><h3>GHAISA RAMADANTI</h3><p>Wakil Koordinator</p></div>
             </div>
 
             <div class="member-card">
                 <div class="photo-wrapper"><img src="Afillah Nurus Sifa_X RPL 1.png"></div>
-                <div class="member-info"><h3>AFILLAH NURUS S.</h3><p>Anggota PDD</p></div>
+                <div class="member-info"><h3>AFILLAH NURUS S.</h3><p>Anggota</p></div>
             </div>
 
             <div class="member-card">
                 <div class="photo-wrapper"><img src="Ana Vi'aduzzaqqia X RPL 1.png"></div>
-                <div class="member-info"><h3>ANA VI'ADUZZAQQIA</h3><p>Anggota PDD</p></div>
+                <div class="member-info"><h3>ANA VI'ADUZZAQQIA</h3><p>Anggota</p></div>
             </div>
 
             <div class="member-card">
                 <div class="photo-wrapper"><img src="Artalyta Devina Damayanti_ X TKJ 4.png"></div>
-                <div class="member-info"><h3>ARTALYTA DEVINA D.</h3><p>Anggota PDD</p></div>
+                <div class="member-info"><h3>ARTALYTA DEVINA D.</h3><p>Anggota</p></div>
             </div>
 
             <div class="member-card">
                 <div class="photo-wrapper"><img src="Fatiha Tsamrotul Kolbi_ X TEI 1.png"></div>
-                <div class="member-info"><h3>FATIHA TSAMROTUL K.</h3><p>Anggota PDD</p></div>
+                <div class="member-info"><h3>FATIHA TSAMROTUL K.</h3><p>Anggota</p></div>
             </div>
 
             <div class="member-card">
                 <div class="photo-wrapper"><img src="Mila Afita Sari_X TKJ 1.png"></div>
-                <div class="member-info"><h3>MILA AFITA SARI</h3><p>Anggota PDD</p></div>
+                <div class="member-info"><h3>MILA AFITA SARI</h3><p>Anggota</p></div>
             </div>
 
             <div class="member-card">
                 <div class="photo-wrapper"><img src="Nada Salsabilla X TKJ 4.png"></div>
-                <div class="member-info"><h3>NADA SALSABILLA</h3><p>Anggota PDD</p></div>
+                <div class="member-info"><h3>NADA SALSABILLA</h3><p>Anggota</p></div>
             </div>
 
             <div class="member-card">
                 <div class="photo-wrapper"><img src="Nasyla Aulia Alifah_X TEI 1.png"></div>
-                <div class="member-info"><h3>NASYLA AULIA A.</h3><p>Anggota PDD</p></div>
+                <div class="member-info"><h3>NASYLA AULIA A.</h3><p>Anggota</p></div>
             </div>
 
             <div class="member-card">
                 <div class="photo-wrapper"><img src="Niken Ayu Anjani_X TEI 1.png"></div>
-                <div class="member-info"><h3>NIKEN AYU A.</h3><p>Anggota PDD</p></div>
+                <div class="member-info"><h3>NIKEN AYU A.</h3><p>Anggota</p></div>
             </div> 
 
         </div>
